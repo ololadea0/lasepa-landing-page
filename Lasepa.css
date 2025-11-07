@@ -1,31 +1,31 @@
 @font-face {
   font-family: "Poppins Regular";
-  src: url("/poppins-font/Poppins-Regular.woff") format("woff");
+  src: url("poppins-font/Poppins-Regular.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: "Poppins Bold";
-  src: url("/poppins-font/Poppins-Bold.woff") format("woff");
+  src: url("poppins-font/Poppins-Bold.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: "Noto Sans Display Regular";
-  src: url("/noto-sans-display/NotoSansDisplay[wdth\,wght].woff") format("woff");
+  src: url("noto-sans-display/NotoSansDisplay[wdth\,wght].woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: "Noto Sans Display Italic";
-  src: url("/noto-sans-display/NotoSansDisplay-Italic[wdth\,wght].woff")
+  src: url("noto-sans-display/NotoSansDisplay-Italic[wdth\,wght].woff")
     format("woff");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
   font-family: "Rubik Bold";
-  src: url("/rubik-font/Rubik-Bold.woff") format("woff");
+  src: url("rubik-font/Rubik-Bold.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
@@ -171,23 +171,23 @@ section:first-of-type {
 @keyframes slideShow {
   0%,
   19% {
-    background-image: url("/slider-1.jpg");
+    background-image: url("slider-1.jpg");
   }
   20%,
   39% {
-    background-image: url("/slider-2.jpg");
+    background-image: url("slider-2.jpg");
   }
   40%,
   59% {
-    background-image: url("/slider-3.jpg");
+    background-image: url("slider-3.jpg");
   }
   60%,
   79% {
-    background-image: url("/slider-4.jpg");
+    background-image: url("slider-4.jpg");
   }
   80%,
   100% {
-    background-image: url("/slider-5.jpg");
+    background-image: url("slider-5.jpg");
   }
 }
 .background-show {
@@ -478,7 +478,7 @@ section:first-of-type {
 }
 
 .section6-container {
-  background-image: url(/newsletter-img.jpg);
+  background-image: url(newsletter-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
