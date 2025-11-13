@@ -92,12 +92,15 @@ header {
   width: 100%;
   top: 0;
   background-color: white;
-  padding: var(--spacing-sm) 0; /* horizontal padding handled by .header-inner */
+  padding: var(--spacing-sm) 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px; */
 }
 
 .header-inner {
@@ -105,11 +108,10 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* or whatever fits your layout */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
 }
 section:first-of-type {
   padding-top: 3px; /* adjust for your nav height */
@@ -472,11 +474,15 @@ section:first-of-type {
   padding: 0 24px;
   font-family: "Noto Sans Display Regular", sans-serif;
   font-size: 14px;
-  transition: max-height 0.5s ease, padding 0.5s ease;
-  display: none;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
 }
 .hidden-answer.active {
-  display: block;
+  max-height: 200px; /* enough for text */
+  opacity: 1;
   padding: 16px 24px;
 }
 .FAQs-container {
@@ -484,6 +490,8 @@ section:first-of-type {
   border-radius: 8px 8px 0 0;
   margin-bottom: 16px;
   box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .faq-arrow {

@@ -43,33 +43,25 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-const faqQuestions = document.querySelectorAll('.rightqestion');
+const faqContainers = document.querySelectorAll('.FAQs-container');
 
-faqQuestions.forEach(question => {
+faqContainers.forEach(container => {
+    const question = container.querySelector('.rightqestion');
+    const answer = container.querySelector('.hidden-answer');
+    const arrow = container.querySelector('.faq-arrow');
+
     question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
+        // Close any open FAQ except the clicked one
+        faqContainers.forEach(other => {
+            if (other !== container)
+            {
+                other.querySelector('.hidden-answer').classList.remove('active');
+                other.querySelector('.faq-arrow').classList.remove('rotate');
+            }
+        });
+
+        // Toggle current FAQ
         answer.classList.toggle('active');
+        arrow.classList.toggle('rotate');
     });
 });
-
-const faqHeaders = document.querySelectorAll('.rightquestion');
-
-faqHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-        const clickedAnswer = header.nextElementSibling;
-        const clickedArrow = header.querySelector('.faq-arrow');
-        const activeAnswer = document.querySelector('.hidden-answer.active');
-
-        if (activeAnswer && activeAnswer !== clickedAnswer)
-        {
-            activeAnswer.classList.remove('active');
-            activeAnswer.previousElementSibling
-                .querySelector('.faq-arrow')
-                .classList.remove('rotate');
-        }
-
-        clickedAnswer.classList.toggle('active');
-        clickedArrow.classList.toggle('rotate');
-    });
-});
-
