@@ -109,7 +109,7 @@ header {
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 section:first-of-type {
   padding-top: 3px; /* adjust for your nav height */
@@ -651,16 +651,14 @@ hr {
 
 /* Mobile Devices (up to 480px) */
 @media screen and (max-width: 480px) {
-  /* keep header fixed and give a known height so content doesn't hide under it */
   header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
-    overflow-x: hidden;
+
     margin: auto;
-    height: 64px; /* fixed header height for small screens */
   }
 
   .page-logos {
@@ -681,7 +679,6 @@ hr {
     gap: 15px;
   }
 
-  /* show the toggle and pin it to the header (flat rules, not nested) */
   .menu-toggle {
     display: block;
     font-size: 24px;
@@ -696,6 +693,11 @@ hr {
     align-items: center;
     justify-content: center;
     border: none;
+
+    position: relative;
+    z-index: 99999;
+    pointer-events: auto;
+    cursor: pointer;
   }
 
   /* the menu stays hidden until toggled; when shown it sits below the header */
@@ -704,20 +706,21 @@ hr {
     flex-direction: column;
     background: white;
     position: absolute;
-    top: 100%; /* directly under the header */
+    top: 100%;
     right: 0;
     width: 220px;
     padding: 15px;
-    z-index: 2000;
+
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: absolute;
   }
   .navigation-menu.active {
     display: flex;
+    opacity: 1;
+    visibility: visible;
   }
-
-  /* prevent page content from being hidden under the fixed header */
-  body {
-    padding-top: 64px; /* matches header height */
+  .header-inner {
+    position: relative;
   }
 
   .nav-links {
